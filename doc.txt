@@ -1,0 +1,31 @@
+python -m venv venv
+.\venv\Scripts\activate
+pip install django djangorestframework django-polymorphic django-rest-polymorphic
+// pip install django-filter
+
+
+django-admin startproject qnaire
+cd .\qnaire
+django-admin startapp api
+
+python .\manage.py makemigrations
+python .\manage.py migrate
+python .\manage.py runserver
+
+
+django-admin startapp frontend
+cd .\frontend
+mkdir src src\components
+mkdir templates
+mkdir static static\frontend static\css static\images
+npm init -y
+npm i webpack webpack-cli --save-dev
+npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+npm i react react-dom --save-dev
+npm i @babel/plugin-proposal-class-properties
+npm i react-router-dom
+npm i @mui/material @emotion/react @emotion/styled @mui/icons-material
+npm install universal-cookie yup formik
+npm i react-beautiful-dnd
+
+npm run dev
